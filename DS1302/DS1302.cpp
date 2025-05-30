@@ -15,10 +15,6 @@
 #define ds1302_charger_addr		0x90
 #define ds1302_clkburst_addr	0xbe
 
-#define PIN_SCK		GPIO_PIN_4
-#define PIN_IO		GPIO_PIN_5
-#define PIN_RST		GPIO_PIN_6
-
 extern "C"{
 extern void Delayus(uint16_t nus);
 extern void Delayms(uint32_t nms);
@@ -28,6 +24,11 @@ enum EData{
 	eDataL,
 	eDataH,
 };
+
+//hardware operate api begin
+#define PIN_SCK		GPIO_PIN_4
+#define PIN_IO		GPIO_PIN_5
+#define PIN_RST		GPIO_PIN_6
 
 static void HW_DAT_IN_MODE()
 {
@@ -65,16 +66,22 @@ static EData HW_DAT_GET()
 	return GPIO_PIN_SET == HAL_GPIO_ReadPin(GPIOA, PIN_IO) ? eDataH: eDataL;
 }
 
+static void HW_RESET(EData high_low)
+{
+	GPIO_PinState eStat = (eDataL == high_low) ? GPIO_PIN_RESET : GPIO_PIN_SET;
+	HAL_GPIO_WritePin(GPIOA, PIN_RST, eStat);
+}
+//hardware operate api end
 
 
 static void Reset_H()
 {
-	HAL_GPIO_WritePin(GPIOA, PIN_RST, GPIO_PIN_SET);
+	HW_RESET(eDataH);
 }
 
 static void Reset_L()
 {
-	HAL_GPIO_WritePin(GPIOA, PIN_RST, GPIO_PIN_RESET);
+	HW_RESET(eDataL);
 }
 
 static void SCK_H()
