@@ -26,6 +26,15 @@ MODE1寄存器配置
 
 PCA9685 objPCA9685(0x80, 200);
 objPCA9685.SetPWM(0, 0, 2048);
+
+  I2C Speed Mode: Standard Mode
+  I2C Clock Speed(Hz): 100k
+
+  Clock No Stretch Mode: Disabled
+  Primary Address Length selection: 7bit
+  Dual Address Acknowledged: Disabled
+  Primary slave address: 0
+  General Call address detection Disabled
  */
 
 #define REG_MODE1_ADDR 0x00

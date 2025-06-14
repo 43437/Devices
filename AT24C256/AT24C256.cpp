@@ -27,6 +27,7 @@
 
   Clock No Stretch Mode: Disabled
   Primary Address Length selection: 7bit
+  Dual Address Acknowledged: Disabled
   Primary slave address: 0
   General Call address detection Disabled
  */
