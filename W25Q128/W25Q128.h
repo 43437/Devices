@@ -18,6 +18,15 @@
   objW25Q128.Seek(0x1FFD);
   objW25Q128.Read(rbuf, 20);
 
+  Frame Format: Motorola
+  Data Size: 8Bit
+  First Bit: MSB First
+
+  18MB
+  CPOL: 1
+  CPHA: 1
+  CRC Calculation: Disabled
+  NSS Signal Type: Software
  */
 #ifndef __W25Q128_H__
 #define __W25Q128_H__
