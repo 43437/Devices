@@ -3,6 +3,16 @@
  *
  *  Created on: Aug 25, 2023
  *      Author: geey17u
+ 	PCF8574 objPCF8574(0x40);
+	PCF8574 objPCF8574_1(0x42);
+
+	I2C Speed Mode: Standard Mode
+  	I2C Clock Speed(Hz): 100k
+	Clock No Stretch Mode: Disabled
+	Primary Address Length selection: 7bit
+	Dual Address Acknowledged: Disabled
+	Primary slave address: 0
+	General Call address detection Disabled
  */
 
 #include "PCF8574.h"
