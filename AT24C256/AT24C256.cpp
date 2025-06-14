@@ -21,6 +21,14 @@
   std::memset(buf, 0, 10);
   objAT24C256.Seek(0);
   objAT24C256.Read(buf, 9);
+
+  I2C Speed Mode: Standard Mode
+  I2C Clock Speed(Hz): 100k
+
+  Clock No Stretch Mode: Disabled
+  Primary Address Length selection: 7bit
+  Primary slave address: 0
+  General Call address detection Disabled
  */
 #include "AT24C256.h"
 
